@@ -48,10 +48,11 @@ https://github.com/ros-gpai/gpai_perception (coming soon).
 
 GPAI is governed by a strict set of tenants which are listed below.
 
-- All parts of GPAI (code, documentation, scripts, etc.) are released open-source under the Apache
-  2.0 license.
-- All ROS packages in GPAI shall be released on the ROS build farm. The schedule for releasing GPAI
-  packages shall be:
+- All parts of the GPAI (code, documentation, scripts, etc.) are released open-source under the
+  Apache 2.0 license.
+- Release numbering for GPAI shall abide by [Symantic Versioning 2.0](https://semver.org/).
+- All ROS packages in the GPAI shall be released on the ROS build farm. The schedule for releasing
+  GPAI packages shall be:
   - On the occasion of a major or minor release.
   - On the last day of every 3rd month (beginning in January) if no major or minor releases have
     been made but at least one patch release has been made.
