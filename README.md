@@ -71,3 +71,5 @@ GPAI is governed by a strict set of tenants which are listed below.
   can perform the review in an objective and impartial manner.
 - All documentation outside of code in GPAI shall be in Markdown or LaTeX formats.
 - All commits shall be signed with a DCO or similar.
+- The GPAI shall support the most recent LTS release of ROS2. The most recent non-LTS release may
+  also be supported.
