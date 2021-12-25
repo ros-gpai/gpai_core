@@ -1,0 +1,18 @@
+name: PR build
+
+on:
+  pull_request:
+  push:
+    branches: main
+
+jobs:
+  dockerfile-lint:
+    runs-on: ubuntu-latest
+    container:
+      image: hadolint/hadolint:latest-debian
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Linting
+        run: |
+          hadolint tools/docker/Dockerfile
