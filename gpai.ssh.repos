@@ -1,0 +1,5 @@
+repositories:
+  src/platform:
+    type: git
+    url: git@github.com:ros-gpai/gpai_platform.git
+    version: main

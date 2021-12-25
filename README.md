@@ -16,7 +16,7 @@ which are used by all other GPAI modules.
 
 `gpai_platform` contains algorithms and nodes which are designed to receive platform-type-specific
 commands and interface with mobile robotics platforms. For more information,
-visit https://github.com/ros-gpai/gpai_platform (coming soon).
+visit https://github.com/ros-gpai/gpai_platform.
 
 ### `gpai_control`
 

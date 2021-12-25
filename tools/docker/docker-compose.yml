@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  gpai:
+    build:
+      context: .
+      args:
+        ROS_DISTRO: foxy
+    image: gpai:latest
+    hostname: gpai
+    stdin_open: true
+    tty: true
+    environment:
+      - COLORFGBG
+      - COLORTERM
+      - EMAIL
+      - GIT_AUTHOR_EMAIL
+      - GIT_AUTHOR_NAME
+      - GIT_COMMITTER_EMAIL
+      - GIT_COMMITTER_NAME
+      - SSH_AUTH_SOCK
+      - TERM
+      - TIMEZONE=${TIMEZONE}
+      - USER
+      - GROUP=${GROUP}
+      - USER_ID=${USER_ID}
+      - GROUP_ID=${GROUP_ID}
+      - DISPLAY
+      - VIDEO_GROUP_ID=${VIDEO_GROUP_ID}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME:/home/$USER
+      - /dev/dri:/dev/dri

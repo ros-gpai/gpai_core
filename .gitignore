@@ -1,0 +1,5 @@
+# GPAI
+src/platform/*
+
+# vim
+*.swp
