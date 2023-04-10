@@ -1,12 +1,12 @@
-version: '3.8'
+version: "3"
 services:
   gpai:
     build:
       context: .
       args:
-        ROS_DISTRO: foxy
-    image: gpai:latest
+        ROS_DISTRO: humble
     hostname: gpai
+    image: gpai:latest
     stdin_open: true
     tty: true
     environment:
@@ -20,11 +20,11 @@ services:
       - SSH_AUTH_SOCK
       - TERM
       - TIMEZONE=${TIMEZONE}
-      - USER
+      - USER=${USER}
       - GROUP=${GROUP}
       - USER_ID=${USER_ID}
       - GROUP_ID=${GROUP_ID}
-      - DISPLAY
+      - DISPLAY=${DISPLAY}
       - VIDEO_GROUP_ID=${VIDEO_GROUP_ID}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
