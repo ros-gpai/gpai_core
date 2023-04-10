@@ -1,4 +1,8 @@
 repositories:
+  src/control:
+    type: git
+    url: https://github.com/ros-gpai/gpai_control.git
+    version: main
   src/platform:
     type: git
     url: https://github.com/ros-gpai/gpai_platform.git
