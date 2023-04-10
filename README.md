@@ -22,27 +22,26 @@ visit https://github.com/ros-gpai/gpai_platform.
 
 `gpai_control` contains algorithms and nodes which are designed to receive platform-agnostic
 trajectories and output platform-type-specific commands. For more information,
-visit https://github.com/ros-gpai_control (comming soon).
+visit https://github.com/ros-gpai/gpai_control.
 
 ### `gpai_planning`
 
 `gpai_planning` contains algorithms and nodes which are designed to receive localization estimates
 and output platform-agnostic trajectories. For more information visit
-https://github.com/ros-gpai/gpai_planning (comming soon).
+https://github.com/ros-gpai/gpai_planning.
 
 ### `gpai_localization`
 
 `gpai_localization` contains algorithms and nodes which are designed to receive platform-relative
 and earth-relative sensor measurements and output filtered localization
-estimates. For more information, visit https://github.com/ros-gpai/gpai_localization
-(coming soon).
+estimates. For more information, visit https://github.com/ros-gpai/gpai_localization.
 
 ### `gpai_perception`
 
 `gpai_perception` contains algorithms and nodes which are designed to receive raw sensor data from
 sensors which perceive the environment around a mobile robot and output semantic
 representations of those data. For more information visit
-https://github.com/ros-gpai/gpai_perception (coming soon).
+https://github.com/ros-gpai/gpai_perception.
 
 ## Tenants
 
