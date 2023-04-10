@@ -5,6 +5,11 @@ src/perception/
 src/planning/
 src/platform/
 
+# Colcon Folders
+build/
+install/
+log/
+
 # Prerequisites
 *.d
 
