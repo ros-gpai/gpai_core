@@ -1,5 +1,7 @@
 # GPAI
 src/control/
+src/localization/
+src/perception/
 src/planning/
 src/platform/
 
