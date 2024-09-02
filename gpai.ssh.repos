@@ -3,6 +3,14 @@ repositories:
     type: git
     url: git@github.com:ros-gpai/gpai_control.git
     version: main
+  src/localization:
+    type: git
+    url: https://github.com/ros-gpai/gpai_localization.git
+    version: main
+  src/perception:
+    type: git
+    url: https://github.com/ros-gpai/gpai_perception.git
+    version: main
   src/planning:
     type: git
     url: git@github.com:ros-gpai/gpai_planning.git
