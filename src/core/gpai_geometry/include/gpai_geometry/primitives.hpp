@@ -22,6 +22,10 @@ namespace gpai
 namespace geometry
 {
 
+class Point3D;
+
+// ---------- Point2D ---------- //
+
 class Point2D
 {
 public:
@@ -43,6 +47,8 @@ public:
   void rotate_around_origin(double angle) noexcept;
   void rotate_around_point(double angle, double x, double y) noexcept;
 
+  Point3D to_3d();
+
 private:
   double x_, y_;
 };
@@ -59,6 +65,8 @@ constexpr bool operator!=(const Point2D & lhs, const Point2D & rhs) noexcept
 
 inline Point2D operator+(const Point2D & lhs, const Point2D & rhs) noexcept;
 inline Point2D operator-(const Point2D & lhs, const Point2D & rhs) noexcept;
+
+// ---------- Line2D ---------- //
 
 class Line2D
 {
@@ -94,6 +102,50 @@ constexpr bool operator!=(const Line2D & lhs, const Line2D & rhs) noexcept
 {
   return !(lhs == rhs);
 }
+
+// ---------- Point3D ---------- //
+
+class Point3D
+{
+public:
+  Point3D();
+  Point3D(double x, double y, double z);
+
+  friend constexpr bool operator==(const Point3D & lhs, const Point3D & rhs) noexcept;
+  friend constexpr bool operator!=(const Point3D & lhs, const Point3D & rhs) noexcept;
+
+  Point3D & operator+=(const Point3D & other) noexcept;
+  Point3D & operator-=(const Point3D & other) noexcept;
+
+  double x() const noexcept;
+  double y() const noexcept;
+  double z() const noexcept;
+
+  void x(double new_x) noexcept;
+  void y(double new_y) noexcept;
+  void z(double new_z) noexcept;
+
+  // void rotate_around_origin(double angle) noexcept;
+  // void rotate_around_point(double angle, double x, double y, double z) noexcept;
+
+  Point2D to_2d();
+
+private:
+  double x_, y_, z_;
+};
+
+constexpr bool operator==(const Point3D & lhs, const Point3D & rhs) noexcept
+{
+  return lhs.x_ == rhs.x_ && lhs.y_ == rhs.y_ && lhs.z_ == rhs.z_;
+}
+
+constexpr bool operator!=(const Point3D & lhs, const Point3D & rhs) noexcept
+{
+  return !(lhs == rhs);
+}
+
+inline Point3D operator+(const Point3D & lhs, const Point3D & rhs) noexcept;
+inline Point3D operator-(const Point3D & lhs, const Point3D & rhs) noexcept;
 
 }  // namespace geometry
 }  // namespace gpai

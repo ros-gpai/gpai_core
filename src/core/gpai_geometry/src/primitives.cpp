@@ -82,6 +82,11 @@ void Point2D::rotate_around_point(double angle, double x, double y) noexcept
   y_ = std::sin(angle) * (old_x - x) + std::cos(angle) * (y_ - y) + y;
 }
 
+Point3D Point2D::to_3d()
+{
+  return Point3D{x_, y_, 0.0};
+}
+
 inline Point2D operator+(const Point2D & lhs, const Point2D & rhs) noexcept
 {
   Point2D result = lhs;
@@ -152,6 +157,99 @@ double Line2D::y_intercept() noexcept
   }
 
   return -c_ / b_;
+}
+
+// ---------- Point3D ---------- //
+
+Point3D::Point3D()
+: x_{}, y_{}, z_{}
+{
+}
+
+Point3D::Point3D(double x, double y, double z)
+: x_{x}, y_{y}, z_{z}
+{
+}
+
+Point3D & Point3D::operator+=(const Point3D & other) noexcept
+{
+  x_ += other.x_;
+  y_ += other.y_;
+  z_ += other.z_;
+  return *this;
+}
+
+Point3D & Point3D::operator-=(const Point3D & other) noexcept
+{
+  x_ -= other.x_;
+  y_ -= other.y_;
+  z_ -= other.z_;
+  return *this;
+}
+
+double Point3D::x() const noexcept
+{
+  return x_;
+}
+
+double Point3D::y() const noexcept
+{
+  return y_;
+}
+
+double Point3D::z() const noexcept
+{
+  return z_;
+}
+
+void Point3D::x(double new_x) noexcept
+{
+  x_ = new_x;
+}
+
+void Point3D::y(double new_y) noexcept
+{
+  y_ = new_y;
+}
+
+void Point3D::z(double new_z) noexcept
+{
+  z_ = new_z;
+}
+
+/*
+void Point3D::rotate_around_origin(double angle) noexcept
+{
+  double old_x = x_;
+  x_ = x_ * std::cos(angle) - y_ * std::sin(angle);
+  y_ = y_ * std::cos(angle) + old_x * std::sin(angle);
+}
+
+void Point3D::rotate_around_point(double angle, double x, double y) noexcept
+{
+  double old_x = x_;
+  x_ = std::cos(angle) * (x_ - x) - std::sin(angle) * (y_ - y) + x;
+  y_ = std::sin(angle) * (old_x - x) + std::cos(angle) * (y_ - y) + y;
+}
+*/
+
+Point2D Point3D::to_2d()
+{
+  return Point2D{x_, y_};
+}
+
+inline Point3D operator+(const Point3D & lhs, const Point3D & rhs) noexcept
+{
+  Point3D result = lhs;
+  result += rhs;
+  return result;
+}
+
+inline Point3D operator-(const Point3D & lhs, const Point3D & rhs) noexcept
+{
+  Point3D result = lhs;
+  result -= rhs;
+  return result;
 }
 
 }  // namespace geometry
